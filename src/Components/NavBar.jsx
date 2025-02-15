@@ -11,7 +11,7 @@ export const NavBar = ({setCategory}) => {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <div className="nav-link cursor-pointer" onClick={()=>{setCategory("technology")}}>Technology</div>
+                  <div className="nav-link" onClick={()=>{setCategory("technology")}}>Technology</div>
                 </li>
                 <li className="nav-item">
                   <div className="nav-link" onClick={()=>{setCategory("business")}}>Business</div>

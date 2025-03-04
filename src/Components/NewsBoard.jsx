@@ -6,12 +6,14 @@ export const NewsBoard = ({ category }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    let url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${import.meta.env.VITE_API_KEY}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=beec4a290f994ff0ba6fea7c4733bc59`;
 
     fetch(url, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-      },
+        'Accept': 'application/json',
+        'Connection': 'keep-alive',
+      }
     })
       .then(response => {
         if (!response.ok) {
@@ -34,7 +36,7 @@ export const NewsBoard = ({ category }) => {
 
   return (
     <div>
-      <h2 className='text-center '>Latest <span className='badge bg-danger'>News</span></h2>
+      <h2 className='text-center'>Latest <span className='badge bg-danger'>News</span></h2>
       {error ? <p className="text-center text-danger">{error}</p> : null}
       {articles.length > 0 ? (
         articles.map((news, index) => (
